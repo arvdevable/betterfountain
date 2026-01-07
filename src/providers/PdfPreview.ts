@@ -62,7 +62,7 @@ export function createPdfPreviewPanel(): vscode.WebviewPanel {
   presentpdfPanels.forEach(p => {
     if (p.uri == editor.document.uri.toString()) {
       //The pdf panel already exists
-      p.panel.reveal();
+      p.panel.reveal(p.panel.viewColumn, true);
       pdfpanel = p.panel;
     }
   });
